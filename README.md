@@ -1,5 +1,1 @@
-# Assignment 4 frameworks at cme
-
-## Api used
-
-just connecting everything for next week
+# Assignment 4 - frameworks (react, vite)
