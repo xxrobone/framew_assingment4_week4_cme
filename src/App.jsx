@@ -31,7 +31,8 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
 `;
 
 const Form = styled.form`
-  width: 100%;
+  position: relative;
+  width: unset;
   height: 100%;
   display: flex;
   align-items: center;

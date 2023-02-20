@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Btn from '../buttons/Btn/Btn'
 
 const StyledHeader = styled.header`
+padding: 0 0.5rem;
 postition: absolute;
 top: 0;
 left: 0;
@@ -16,7 +17,9 @@ background: linear-gradient(40deg, #484848, #121212);
 background-repeat: no-reapeat;
 
 @media screen and (min-width: 769px) {
+    padding: 0 2rem;
     flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
@@ -31,7 +34,7 @@ z-index: 5;
 const Header = ({children}) => {
 
     return ( 
-        <StyledHeader >
+        <StyledHeader>
             <Logo>VGS - video game search</Logo>
             {children}
     </StyledHeader>
