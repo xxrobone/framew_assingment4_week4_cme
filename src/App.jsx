@@ -64,11 +64,12 @@ function App() {
   /* const [currentPage, setCurrentPage] = useState(null) */
   const[ isLoading, setLoading ] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  console.log(games) 
+ 
   
 
   useEffect(() => {    
     getGames(API_GAMES)
+    console.log(games) 
     setLoading(false)
   }, []) 
 
@@ -119,7 +120,7 @@ function App() {
                 type="text" 
                 placeholder="Search games... "
                 onChange={handleOnChange}
-                value={setSearchQuery}
+                value={searchQuery}
                 key={games.id}
             />
             <button

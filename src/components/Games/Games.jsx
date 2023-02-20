@@ -83,10 +83,9 @@ span {
 const GameItem = ({ game }) => {  
 
 
-  return(
-    
+  return(    
       <GameCard className="game">
-          <img src={game.background_image} alt={game.name}/>
+      <img src={game.background_image} alt={game.name} />
             <div className="game-info">
               <h4>{game.name.toUpperCase()}</h4>
               <div>
@@ -94,7 +93,7 @@ const GameItem = ({ game }) => {
                 {game.parent_platforms.map(p => 
                   (
                     <>
-                     <span key={Math.random() * 123}>{p.platform.name 
+                     <span key={game.id + p.platform.name}>{p.platform.name 
                     ?
                      (p.platform.name === 'PC' ? <RiWindowsFill /> : null
                     ||  p.platform.name === 'PlayStation' ? <RiPlaystationLine /> : null
