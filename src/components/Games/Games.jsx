@@ -6,10 +6,11 @@ import {DiLinux } from 'react-icons/di'
 import {SiNintendo } from 'react-icons/si'
 
 
- const GameCard = styled.div`
+ const GameCard = styled.li`
   position: relative;
   margin: 1.5rem 0.5rem;
-  width: 260px;
+  width: 16rem;
+  height: 15rem;
   background-color: rgb(255, 255, 255);
   text-align: center;
   overflow: hidden;
@@ -49,8 +50,12 @@ span {
 &>a {
   &>p {
     padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
-    color: #5a5a5a;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.6rem;
+    color: #f2f0f0;
     background-color: black;
   }
 }
@@ -89,11 +94,11 @@ span {
 
 
 
-const GameItem = ({ game }) => {  
+const GameItem = ({game}) => {  
 
 
   return(    
-      <GameCard className="game">
+      <GameCard className="game" >
       <img src={game.background_image} alt={game.name} />
             <div className="game-info">
               <h4>{game.name.toUpperCase()}</h4>

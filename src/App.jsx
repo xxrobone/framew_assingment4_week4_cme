@@ -63,7 +63,6 @@ const API_SEARCH = `${API_URL}?key=${API_KEY}&search=`
 
 function App() {
   const [games, setGames] = useState([]);
-  /* const [currentPage, setCurrentPage] = useState(null) */
   const[ isLoading, setLoading ] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
  
@@ -108,25 +107,9 @@ function App() {
   return (
     <BrowserRouter>
     <MainPage>
-        <Header>
-        {/* <Form onSubmit={handleOnSubmit} id="form1">
-            <Input
-              className="search" 
-                type="text" 
-                placeholder="Search games... "
-                onChange={handleOnChange}
-                value={searchQuery}
-                key={games.id}
-            />
-            <button
-              className="submit_btn"
-              type="submit"
-              form="form1"
-              ><RiSearch2Line /></button>
-          </Form>        */}  
-        </Header>
+        <Header />
         <Routes>
-          <Route path='/' element={<Home games={games} />} />
+          <Route path='/' element={<Home games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
           <Route path="/games/:gameId" element={<GameDetails games={games} />} />
         </Routes>
       </MainPage>

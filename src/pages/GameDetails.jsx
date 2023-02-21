@@ -32,7 +32,7 @@ flex-flow: wrap;
   }
   
    
-  .game-info {
+  .game_info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +46,20 @@ flex-flow: wrap;
 
   .icon {
     font-size: 2rem;
+  }
+}
+
+.go_back {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border: 1px solid #888;
+  width: 40%;
+  text-align: center;
+
+  &:hover {
+    transition: all 0.4s ease-in-out;
+    background-color: white;
+    color: #282828;
   }
 }
 
@@ -65,7 +79,7 @@ const GameDetails = ({games}) => {
               <div>
                  <h1>{game.name.toUpperCase()}</h1> 
                    <img src={game.background_image} alt={game.name} />
-                  <div className="game-info">
+                  <div className="game_info">
                   <span>Score: {game.rating}/5</span>
                   <div>
                       {game.parent_platforms.map(p => 
@@ -92,7 +106,7 @@ const GameDetails = ({games}) => {
           }
            
         })}
-        <Link to='/'> Go back </Link>
+        <Link to='/' className='go_back'> Go back </Link>
     </Details>
     
     </>

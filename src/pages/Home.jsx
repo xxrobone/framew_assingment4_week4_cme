@@ -60,8 +60,8 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
 `;
 
 
-function Home () {
-
+function Home ({games, handleOnChange, handleOnSubmit, searchQuery}) {
+/* 
   const [games, setGames] = useState([]);
   const[ isLoading, setLoading ] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -101,7 +101,7 @@ function Home () {
   const handleOnChange = (e) => {
     setSearchQuery(e.target.value)
   }
-
+ */
 
 
 

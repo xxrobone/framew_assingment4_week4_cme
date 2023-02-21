@@ -15,11 +15,9 @@ const GamesList = ({ games }) => {
 return ( 
     <>
         <GamesContainer>
-            {games.length > 0 && games.map(game => {
-                return (
-                        <li key={game.id + game.name}>
-                            <GameItem game={game}  />                    
-                        </li>
+            {games.length > 0 && games.map((game) => {
+                return (                        
+                    <GameItem game={game} key={game.id} />                    
                     );
             })}
         </GamesContainer> 
