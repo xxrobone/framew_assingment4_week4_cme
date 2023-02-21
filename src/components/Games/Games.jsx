@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-
 import {RiPlaystationLine, RiXboxFill, RiMacLine, RiWindowsFill, RiAndroidLine, RiAppleFill } from 'react-icons/ri'
 import {DiLinux } from 'react-icons/di'
 import {SiNintendo } from 'react-icons/si'
@@ -10,12 +10,12 @@ import {SiNintendo } from 'react-icons/si'
   position: relative;
   margin: 1.5rem 0.5rem;
   width: 260px;
-  background-color: rgb(224, 92, 51);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  color: white;
+  color: #2e2e2e;
 
   @media screen and (min-width: 769px) {
     margin: 1.5rem 2rem;
@@ -46,6 +46,14 @@ span {
   padding: 0.2rem;
 }
 
+&>a {
+  &>p {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    color: #5a5a5a;
+    background-color: black;
+  }
+}
  `;
 /*
  &>.game-review {
@@ -80,6 +88,7 @@ span {
  */
 
 
+
 const GameItem = ({ game }) => {  
 
 
@@ -107,8 +116,7 @@ const GameItem = ({ game }) => {
                     }</span>
                     </>
                   ))}
-              </div> 
-              
+              </div>              
               
               </div>
   
@@ -123,7 +131,10 @@ const GameItem = ({ game }) => {
               height={180}
               controls = {true} */}             
           </div> 
-    
+          <Link to={`/games/${game.id}`}>
+                      <p>
+                        Read more about {game.name}</p>                    
+                    </Link>
       </GameCard>
   );
 }

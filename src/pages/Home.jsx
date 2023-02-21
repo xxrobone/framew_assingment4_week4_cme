@@ -1,35 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
 import styled from 'styled-components'
-import Header from './components/Header/Header'
-import Home from './pages/Home'
-import GameDetails from './pages/GameDetails'
+import Header from '../components/Header/Header'
+import GamesList from '../components/GamesList/GamesList'
+
+import Btn from '../components/buttons/Btn/Btn'
 import { RiSearch2Line } from 'react-icons/ri'
+import Hero from '../components/hero/Hero';
 
-// styles
-const MainPage = styled.div`
-height: 100vh;
-display: flex;
-align-items: center;
-flex-flow: wrap;
-`;
 
-const Input = styled.input`
-margin: 0 1rem;
-padding: 4px 6px;
-font-size: 1rem;
-border: 0;
-border-radius: 5px;
-height: 2rem;
-outline: none;
-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
-`;
+const API_URL = import.meta.env.VITE_APP_API_URL
+const API_KEY = import.meta.env.VITE_APP_API_KEY
+const API_GAMES = `${API_URL}?key=${API_KEY}`
+const API_SEARCH = `${API_URL}?key=${API_KEY}&search=`
+
+const HomeWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
 
 const Form = styled.form`
   position: relative;
-  width: unset;
-  height: 100%;
+    align-self: center;
+  height: 10vh;
   display: flex;
   align-items: center;
 
@@ -37,7 +31,7 @@ const Form = styled.form`
 .submit_btn {
   position: relative;
   background-color: transparent;
-  color: #ffffff;
+  color: #888;
   border: 0;
   border-radius: 50%;
   outline: none;
@@ -54,16 +48,21 @@ const Form = styled.form`
 }
 `;
 
+const Input = styled.input`
+margin: 0 1rem;
+padding: 4px 6px;
+font-size: 1rem;
+border: 0;
+border-radius: 5px;
+height: 2rem;
+outline: none;
+box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
+`;
 
-const API_URL = import.meta.env.VITE_APP_API_URL
-const API_KEY = import.meta.env.VITE_APP_API_KEY
-const API_GAMES = `${API_URL}?key=${API_KEY}`
-const API_SEARCH = `${API_URL}?key=${API_KEY}&search=`
 
+function Home () {
 
-function App() {
   const [games, setGames] = useState([]);
-  /* const [currentPage, setCurrentPage] = useState(null) */
   const[ isLoading, setLoading ] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
  
@@ -84,7 +83,6 @@ function App() {
         return;
       } else {
         setGames(data.results)
-        console.log(data.results)
       }
     } catch (error) {
       console.log(error + 'something went wrong');
@@ -105,11 +103,12 @@ function App() {
   }
 
 
+
+
   return (
-    <BrowserRouter>
-    <MainPage>
-        <Header>
-        {/* <Form onSubmit={handleOnSubmit} id="form1">
+    <HomeWrapper>
+    <Hero />
+      <Form onSubmit={handleOnSubmit} id="form1">
             <Input
               className="search" 
                 type="text" 
@@ -123,15 +122,10 @@ function App() {
               type="submit"
               form="form1"
               ><RiSearch2Line /></button>
-          </Form>        */}  
-        </Header>
-        <Routes>
-          <Route path='/' element={<Home games={games} />} />
-          <Route path="/games/:gameId" element={<GameDetails games={games} />} />
-        </Routes>
-      </MainPage>
-      </BrowserRouter>
-  );   
+          </Form>         
+      <GamesList games={games} />      
+    </HomeWrapper>
+  );
 }
 
-export default App;
+export default Home;
