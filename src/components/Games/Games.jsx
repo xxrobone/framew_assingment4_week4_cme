@@ -9,8 +9,8 @@ import {SiNintendo } from 'react-icons/si'
  const GameCard = styled.li`
   position: relative;
   margin: 1.5rem 0.5rem;
-  width: 16rem;
-  height: 15rem;
+  max-width: 16rem;
+  height: 16rem;
   background-color: rgb(255, 255, 255);
   text-align: center;
   overflow: hidden;
@@ -138,7 +138,7 @@ const GameItem = ({game}) => {
           </div> 
           <Link to={`/games/${game.id}`}>
                       <p>
-                        Read more about {game.name}</p>                    
+                        Read more...</p>                    
                     </Link>
       </GameCard>
   );
