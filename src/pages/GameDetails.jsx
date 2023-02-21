@@ -49,6 +49,26 @@ flex-flow: wrap;
   }
 }
 
+.date {
+  color: #888;
+}
+
+.thumbnails {
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+
+  .thumbnail {
+    margin: 1rem;
+    max-width: 25%;
+    height: auto;
+  }
+}
+
 .go_back {
   margin: 0 auto;
   padding: 1rem 2rem;
@@ -79,8 +99,9 @@ const GameDetails = ({games}) => {
               <div>
                  <h1>{game.name.toUpperCase()}</h1> 
                    <img src={game.background_image} alt={game.name} />
-                  <div className="game_info">
+                <div className="game_info">
                   <span>Score: {game.rating}/5</span>
+                  <span className='date'>Relased: {game.released}</span>
                   <div>
                       {game.parent_platforms.map(p => 
                         (
@@ -99,8 +120,14 @@ const GameDetails = ({games}) => {
                           }</span>
                           </>
                         ))}          
-                    </div>
-                    </div>         
+                    </div>                    
+                </div> 
+                <div className='thumbnails'>
+                {game.short_screenshots.map(s => (
+                  <img className='thumbnail' src={s.image} alt='thumbnail' />
+                ))}
+
+                </div>
             </div> 
             )
           }
