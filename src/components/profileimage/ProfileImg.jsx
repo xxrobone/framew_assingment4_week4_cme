@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ProfileContainer = styled.div`
-    margin: 1rem 0;
+    margin: 1rem;
     width: 50px;
     height: 50px;
     display: grid;
