@@ -11,7 +11,7 @@ const SidebarWrapper = styled.div`
     padding: 2.625rem 0;
     width: 125px;
     height: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;   
     background-color: #1d1e22;

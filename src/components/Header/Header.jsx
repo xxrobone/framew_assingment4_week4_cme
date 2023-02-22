@@ -8,7 +8,7 @@ position: absolute;
 top: 0;
 right: 0;
 height: 10vh;
-width: calc(100% - 125px);
+width: 80%;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -22,7 +22,7 @@ background-color: transparent;
 }
 
 @media screen and (min-width: 769px) {
-    padding: 0 2.625rem;
+    padding: 0 3.125rem 0 0;
     flex-direction: row;
     justify-content: space-between;
   }

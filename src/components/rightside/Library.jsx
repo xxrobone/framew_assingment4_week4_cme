@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const LibraryContainer = styled.div`
-    height: 825px;
-    width: 334px; 
+    width: 100%; 
     background: linear-gradient(to left top, #252525, #2C2C2C, #1f1f1f );
 `
 
-const Library = () => {
+const Library = ({children}) => {
   return (
-    <div>Library</div>
+    <LibraryContainer>
+      {children}
+    </LibraryContainer>
   )
 }
 

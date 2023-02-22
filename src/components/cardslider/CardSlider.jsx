@@ -12,6 +12,12 @@ const Slider = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &>img {
+      :last-child {
+        object-position: top center;
+      }
+    }
     
  }
 `

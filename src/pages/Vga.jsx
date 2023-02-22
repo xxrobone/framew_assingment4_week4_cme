@@ -8,6 +8,7 @@ import CardSmall from '../components/cards/CardSmall'
 import GameImg1 from '../assets/images/Image-7.png'
 import GameImg2 from '../assets/images/Image-10.png'
 import GameImg3 from '../assets/images/Image-6.png'
+import RightSide from '../components/rightside/RightSide'
 // this is from getting an idea from developer Fredrik Carlsson
 // challenge myself to try to implement a more unique and professional design
 
@@ -21,35 +22,39 @@ import GameImg3 from '../assets/images/Image-6.png'
 // slider recently played
 
 const VgaMain = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 8.75rem;
-  left: 10.625rem;
+  left: 4.125rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
   /* background: linear-gradient(to bottom, #1d1e22c3, #39393939); */
   /* background: linear-gradient(to bottom, #000000, #38393D); */
 
-  &>div {
-    display: flex;
-    flex-direction: row;
-
-    &>section {
-    margin-top: 5rem;
-    margin-left: 5rem;
+  &>article {
     display: flex;
     flex-direction: column;
-
-    h4 {
-      text-align: left;
-      margin-bottom: 1.5rem;
-        font-size: 1.125rem;
-        font-weight: 600;
-      }
-  }
+    &>div {
+      display: flex;
+      flex-direction: row;
+  
+      &>section {
+      margin-top: 5rem;
+      margin-left: 5rem;
+      display: flex;
+      flex-direction: column;
+  
+      h4 {
+        text-align: left;
+        margin-bottom: 1.5rem;
+          font-size: 1.125rem;
+          font-weight: 600;
+        }
+    }
+    }
   }
 
   
@@ -71,7 +76,8 @@ const VgaMain = styled.div`
 
 const Vga = () => {
   return (
-      <VgaMain>
+    <VgaMain>
+      <article>
       <CardGame />
       <div>
         <CardItem />
@@ -84,6 +90,8 @@ const Vga = () => {
         </CardSlider>
         </section>
       </div>
+      </article>
+      <RightSide />
       <div className="bg_ellipse"></div>
       </VgaMain>
   )
