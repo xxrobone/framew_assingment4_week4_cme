@@ -15,20 +15,37 @@ import CardItem from '../components/cards/CardItem'
 // slider recently played
 
 const VgaMain = styled.div`
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 8.75rem;
   left: 10.625rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &>.bg_ellipse {
+  width: 840px;
+  height: 840px;
+  position: absolute;
+  left: 80vw;
+  top: 70vh;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: #067D714D;
+  filter: blur(200px);
+}
 `
+
+
 
 const Vga = () => {
   return (
       <VgaMain>
       <CardGame />
       <CardItem />
+      <div className="bg_ellipse"></div>
       </VgaMain>
   )
 }

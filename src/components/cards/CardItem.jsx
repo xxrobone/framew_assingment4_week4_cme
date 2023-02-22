@@ -12,7 +12,6 @@ const CardItemContainer = styled.div`
     position: relative;
     width: 358px;
     height: 440px;
-    align-self: flex-start;
     border-radius: 40px;
     background: linear-gradient(to top left, #15151580 40%, #bd090978);
     overflow: hidden;
