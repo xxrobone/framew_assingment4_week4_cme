@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const IconContainer = styled.div`
     margin: 1rem;
-    width: 50px;
+    width: 55px;
     height: 50px;
     display: grid;
     place-content: center;

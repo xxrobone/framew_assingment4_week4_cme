@@ -9,15 +9,18 @@ const Slider = styled.div`
  &>div {
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
  }
 `
 
-const CardSlider = () => {
+const CardSlider = ({children}) => {
   return (
       <Slider>
           <div>
-              
+              {children}
           </div>
     </Slider>
   )

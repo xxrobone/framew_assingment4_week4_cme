@@ -12,9 +12,14 @@ const CardItemContainer = styled.div`
     position: relative;
     width: 358px;
     height: 440px;
-    border-radius: 40px;
+    border-radius: 2.5rem;
     background: linear-gradient(to top left, #15151580 40%, #bd090978);
     overflow: hidden;
+    border: solid 4px transparent; 
+
+    &:hover {
+      border: 2px solid #888;
+    }
 
     &>div {
       margin-top: 2rem;
@@ -23,7 +28,7 @@ const CardItemContainer = styled.div`
       justify-content: center;
       
 
-      h2 {
+      h4 {
         font-size: 1.125rem;
         font-weight: 600;
       }
@@ -62,7 +67,7 @@ const CardItemContainer = styled.div`
 const CardItem = () => {
   return (
     <CardItemContainer>
-      <div><h2>Best Gaming Headset</h2><img src={ArrowIcon} alt="" /></div>
+      <div><h4>Best Gaming Headset</h4><img src={ArrowIcon} alt="" /></div>
       <img className='card_bg' src={CardBg} alt="" />
       <img className='card_img'  src={CardHeadSet} alt="" />
           

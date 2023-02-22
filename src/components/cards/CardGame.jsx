@@ -14,12 +14,16 @@ const CardGameContainer = styled.div`
     position: relative;
     width: 850px;
     height: 320px;
-    border-radius: 25px;
+    border-radius: 3.125rem;
+
+    /* &:hover {
+      border: 2px solid #888;
+    } */
 
     &>div {
 
       &>img {
-        border-radius: 50px;
+        border-radius: 3.125rem;
         opacity: 0.5;
       }
     }
@@ -29,7 +33,6 @@ const CardGameContainer = styled.div`
       bottom: 0;
       right: 2.5rem;
     }
-
 `
 
 

@@ -2,6 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import CardGame from '../components/cards/CardGame'
 import CardItem from '../components/cards/CardItem'
+import CardSlider from '../components/cardslider/CardSlider'
+import CardSmall from '../components/cards/CardSmall'
+
+import GameImg1 from '../assets/images/Image-7.png'
+import GameImg2 from '../assets/images/Image-10.png'
+import GameImg3 from '../assets/images/Image-6.png'
 // this is from getting an idea from developer Fredrik Carlsson
 // challenge myself to try to implement a more unique and professional design
 
@@ -24,6 +30,29 @@ const VgaMain = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  /* background: linear-gradient(to bottom, #1d1e22c3, #39393939); */
+  /* background: linear-gradient(to bottom, #000000, #38393D); */
+
+  &>div {
+    display: flex;
+    flex-direction: row;
+
+    &>section {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      text-align: left;
+      margin-bottom: 1.5rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+  }
+  }
+
+  
 
   &>.bg_ellipse {
   width: 840px;
@@ -44,7 +73,17 @@ const Vga = () => {
   return (
       <VgaMain>
       <CardGame />
-      <CardItem />
+      <div>
+        <CardItem />
+        <section>
+          <h4>Recently played games</h4>
+        <CardSlider>
+          <CardSmall img={GameImg1} />
+          <CardSmall img={GameImg2} />
+          <CardSmall img={GameImg3} />
+        </CardSlider>
+        </section>
+      </div>
       <div className="bg_ellipse"></div>
       </VgaMain>
   )
