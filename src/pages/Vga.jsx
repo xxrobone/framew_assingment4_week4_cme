@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CardGame from '../components/cards/CardGame'
+import CardItem from '../components/cards/CardItem'
 // this is from getting an idea from developer Fredrik Carlsson
 // challenge myself to try to implement a more unique and professional design
 
@@ -26,7 +27,8 @@ const VgaMain = styled.div`
 const Vga = () => {
   return (
       <VgaMain>
-          <CardGame />
+      <CardGame />
+      <CardItem />
       </VgaMain>
   )
 }
