@@ -10,9 +10,8 @@ import BellIcon from './assets/icons/akar-icons_bell.svg'
 import PaperPlaneIcon from './assets/icons/cil_paper-plane.svg'
 import HeaderProfileImg from './assets/images/Image-5.png'
 
-
 // sidebar
-import Sidebar from './components/Sidebar/Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
 
 // header components
 import Header from './components/Header/Header';

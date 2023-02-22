@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Sidebar from '../components/Sidebar/Sidebar'
 // this is from getting an idea from developer Fredrik Carlsson
 // challenge myself to try to implement a more unique and professional design
 
