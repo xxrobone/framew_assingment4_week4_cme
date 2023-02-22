@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import styled from 'styled-components'
-import Header from './components/Header/Header'
-import Home from './pages/Home'
-import GameDetails from './pages/GameDetails'
-import { RiSearch2Line } from 'react-icons/ri'
+import styled from 'styled-components';
+import Header from './components/Header/Header';
+import Home from './pages/Home';
+import GameDetails from './pages/GameDetails';
+import Vga from './pages/Vga';
+import { RiSearch2Line } from 'react-icons/ri';
+import Sidebar from './components/Sidebar/Sidebar';
+import Search from './components/searchbar/Search';
 
 // styles
 const MainPage = styled.div`
@@ -60,18 +63,46 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY
 const API_GAMES = `${API_URL}?key=${API_KEY}`
 const API_SEARCH = `${API_URL}?key=${API_KEY}&search=`
 
+const array = [
+
+    { id: 3498, slug: 'grand-theft-auto-v', name: 'Grand Theft Auto V', released: '2013-09-17', tba: false, },
+  
+    { id: 3328, slug: 'the-witcher-3-wild-hunt', name: 'The Witcher 3: Wild Hunt', released: '2015-05-18', tba: false, },
+  
+    { id: 4200, slug: 'portal-2', name: 'Portal 2', released: '2011-04-18', tba: false, },
+  
+    { id: 5286, slug: 'tomb-raider', name: 'Tomb Raider (2013)', released: '2013-03-05', tba: false, },
+  
+    { id: 4291, slug: 'counter-strike-global-offensive', name: 'Counter-Strike: Global Offensive', released: '2012-08-21', tba: false, },
+  
+    { id: 13536, slug: 'portal', name: 'Portal', released: '2007-10-09', tba: false, },
+   
+    { id: 12020, slug: 'left-4-dead-2', name: 'Left 4 Dead 2', released: '2009-11-17', tba: false, },
+  
+    { id: 5679, slug: 'the-elder-scrolls-v-skyrim', name: 'The Elder Scrolls V: Skyrim', released: '2011-11-11', tba: false, },
+   
+    { id: 4062, slug: 'bioshock-infinite', name: 'BioShock Infinite', released: '2013-03-26', tba: false, },
+  
+    { id: 802, slug: 'borderlands-2', name: 'Borderlands 2', released: '2012-09-18', tba: false, },
+   
+    { id: 28, slug: 'red-dead-redemption-2', name: 'Red Dead Redemption 2', released: '2018-10-26', tba: false, },
+];
+
 
 function App() {
   const [games, setGames] = useState([]);
+  /* const [games, setGames] = useState(array); */
   const[ isLoading, setLoading ] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+
+  console.log(games)
  
   
 
   useEffect(() => {    
-    getGames(API_GAMES)
+    /* getGames(API_GAMES)
     console.log(games) 
-    setLoading(false)
+    setLoading(false) */
   }, []) 
 
   const getGames = async(URL) => {
@@ -107,10 +138,14 @@ function App() {
   return (
     <BrowserRouter>
     <MainPage>
-        <Header />
+        <Header>
+          <Search games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />
+        </Header>
+        <Sidebar />
         <Routes>
-          <Route path='/' element={<Home games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
-          <Route path="/games/:gameId" element={<GameDetails games={games} />} />
+         {/*  <Route path='/' element={<Home games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
+          <Route path="/games/:gameId" element={<GameDetails games={games} />} /> */}
+          <Route path="/" element={<Vga />} />
         </Routes>
       </MainPage>
       </BrowserRouter>

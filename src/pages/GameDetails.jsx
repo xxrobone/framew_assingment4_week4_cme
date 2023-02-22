@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { RiPlaystationLine, RiXboxFill, RiMacLine, RiWindowsFill, RiAndroidLine, RiAppleFill } from 'react-icons/ri'
 import { DiLinux } from 'react-icons/di';
 import { SiNintendo } from 'react-icons/si';
+
+
 const Details = styled.div`
 margin: 0 auto;
 max-width: 800px;

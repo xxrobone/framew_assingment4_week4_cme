@@ -1,23 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
-import Btn from '../buttons/Btn/Btn'
 
 const StyledHeader = styled.header`
-padding: 0 0.5rem;
-postition: absolute;
+margin-top: 2.25rem;
+padding: 0 2.625rem;
+position: absolute;
 top: 0;
-left: 0;
+right: 0;
 height: 10vh;
-width: 100%;
+width: calc(100% - 125px);
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: space-between;
 text-transform: uppercase;
-background: linear-gradient(40deg, #484848, #121212);
-background-repeat: no-reapeat;
+background-color: transparent;
 
 @media screen and (min-width: 769px) {
-    padding: 0 2rem;
+    padding: 0 2.625rem;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -35,9 +35,9 @@ const Header = ({children}) => {
 
     return ( 
         <StyledHeader>
-            <Logo>VGS - video game search</Logo>
+            {/* <Logo>VGS - video game search</Logo> */}
             {children}
-    </StyledHeader>
+        </StyledHeader>
      );
 }
  

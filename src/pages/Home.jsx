@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import Header from '../components/Header/Header'
 import GamesList from '../components/GamesList/GamesList'
-
-import Btn from '../components/buttons/Btn/Btn'
 import { RiSearch2Line } from 'react-icons/ri'
 import Hero from '../components/hero/Hero';
 
