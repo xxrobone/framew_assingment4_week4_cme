@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import CardGame from '../components/cards/CardGame'
 // this is from getting an idea from developer Fredrik Carlsson
 // challenge myself to try to implement a more unique and professional design
 
@@ -13,18 +14,20 @@ import styled from 'styled-components'
 // slider recently played
 
 const VgaMain = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: orange;
+  position: absolute;
+  top: 8.75rem;
+  left: 10.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 
 const Vga = () => {
   return (
       <VgaMain>
-          <h1>vga</h1>
-    </VgaMain>
+          <CardGame />
+      </VgaMain>
   )
 }
 
