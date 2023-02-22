@@ -24,8 +24,6 @@ const Button = styled.button`
     }
 `
 
-
-
 const IconButton = () => {
   return (
         <Button>

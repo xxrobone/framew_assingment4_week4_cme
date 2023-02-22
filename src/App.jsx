@@ -2,13 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import styled from 'styled-components';
-import Header from './components/Header/Header';
 import Home from './pages/Home';
 import GameDetails from './pages/GameDetails';
 import Vga from './pages/Vga';
-import { RiSearch2Line } from 'react-icons/ri';
+/* import { RiSearch2Line } from 'react-icons/ri'; */
+import BellIcon from './assets/icons/akar-icons_bell.svg'
+import PaperPlaneIcon from './assets/icons/cil_paper-plane.svg'
+import HeaderProfileImg from './assets/images/Image-5.png'
+
+
+// sidebar
 import Sidebar from './components/Sidebar/Sidebar';
+
+// header components
+import Header from './components/Header/Header';
 import Search from './components/searchbar/Search';
+// icons
+import IconBtn from './components/buttons/iconbtn/IconBtn';
+import ProfileImg from './components/profileimage/ProfileImg';
 
 // styles
 const MainPage = styled.div`
@@ -140,6 +151,11 @@ function App() {
     <MainPage>
         <Header>
           <Search games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />
+          <div>
+            <IconBtn iconImg={BellIcon}/>
+            <IconBtn iconImg={PaperPlaneIcon} dark />
+            <ProfileImg img={HeaderProfileImg} />
+          </div>
         </Header>
         <Sidebar />
         <Routes>
