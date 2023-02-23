@@ -5,7 +5,7 @@ const StyledHeader = styled.header`
 margin: 2.25rem auto 0;
 position: relative;
 top: 0;
-left: 10.625rem;
+left: 3.125rem;
 height: 10vh;
 width: 100%;
 display: flex;
@@ -18,7 +18,7 @@ background-color: transparent;
 @media screen and (min-width: 769px) {
   position: absolute;
   top: 0;
-  left: 10.625rem;
+  left: 3.125rem;
   height: 10vh;
   padding: 0 10%;  
   }

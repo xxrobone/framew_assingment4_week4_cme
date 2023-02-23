@@ -26,7 +26,7 @@ const VgaMain = styled.div`
   height: 100%;
   position: relative;
   top: 8.75rem;
-  left: 10.625rem;
+  left: 3.125rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;

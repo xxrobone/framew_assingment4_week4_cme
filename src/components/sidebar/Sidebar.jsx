@@ -22,7 +22,6 @@ const SidebarWrapper = styled.div`
 
     @media screen and (min-width: 769px) {
         width: 7.625rem;
-        left: 10%;
   }
 
     &>img {
