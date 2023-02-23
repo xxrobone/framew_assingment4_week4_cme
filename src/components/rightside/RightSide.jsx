@@ -16,8 +16,9 @@ const SidebarContainer = styled.div`
 // had to count header padding + 1rem margin for icons to adjust right side distance
     margin-left: 5.725rem;
     padding: 1rem;
-    min-height: 52rem;
-    max-width: 20.875rem; 
+    max-height: 52rem;
+    max-width: 20.875rem;
+    min-width: 18.25rem; 
     position: relative;
     display: flex;
     flex-direction: column;
@@ -25,7 +26,7 @@ const SidebarContainer = styled.div`
     background: linear-gradient(to top left, #252525, #2c2c2c, #1f1f1f);
     border-radius: 2.5rem;
     overflow: hidden;
-    z-index: -1;
+    z-index: 2;
 
     &>.circle {
       position: absolute;
@@ -35,7 +36,8 @@ const SidebarContainer = styled.div`
       height: 52.5rem;
       border-radius: 50%;
       background-color: #fffffff;
-      z-index: 2;
+      z-index: 3;
+      pointer-events: none;
     }
 `
 
@@ -46,11 +48,15 @@ const RightSide = () => {
         <CardGameItem img={Img1} title='Minecraft' platforms='xbox, ps5, pc' />
         <CardGameItem img={Img2} title='Assassins creed' platforms='xbox, ps5, pc' />
         <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
+        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
+        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
       </Library>
       <Mail />
       <Online>
         <CardOnline img={ImgOnline1} title='YeahBoi2023' playing='Fortnite'/>
         <CardOnline img={ImgOnline2} title='KidRage06' playing='Rocket League'/>
+        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
+        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
         <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
       </Online>
       <div className='circle'></div>

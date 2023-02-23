@@ -3,19 +3,15 @@ import styled from 'styled-components'
 
 const CardContainer = styled.div`
 margin: 1rem 0;
-width: 18.25rem;
+width: 100%;
 height: 4rem;
 display: flex;
 align-items: center;
 /* background-color: #23212262; */
 border-radius: 1rem;
 border: 2px solid transparent;
+pointer-events: none;
 
-&:hover {
-    transition: all 0.4s ease;
-        cursor: pointer;
-        border: 2px solid #888;
-    }
 
 &>.small_img {
     margin-right: 1rem;

@@ -69,6 +69,7 @@ const VgaMain = styled.div`
   border-radius: 50%;
   background-color: #067D714D;
   filter: blur(200px);
+  pointer-events: none;
 }
 `
 

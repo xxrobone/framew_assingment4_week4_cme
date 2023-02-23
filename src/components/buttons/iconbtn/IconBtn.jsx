@@ -14,7 +14,10 @@ const IconContainer = styled.div`
           height: 3.125rem;
         }
 
-    background: ${props =>  props.dark ? 'linear-gradient(to top, #1D1E22,#393939)' : '#3DBDA7'};
+    background: ${props => props.dark ? 'linear-gradient(to top, #1D1E22,#393939)' : '#3DBDA7'};
+    &:hover {
+      cursor: pointer;
+    }
 
 
     &>img {

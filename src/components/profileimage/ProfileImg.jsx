@@ -11,6 +11,10 @@ const ProfileContainer = styled.div`
     overflow: hidden;
     /* background: linear-gradient(to top, #1D1E22,#393939); */
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @media screen and (min-width: 769px) {
       width: 3.125rem;
       height: 3.125rem;

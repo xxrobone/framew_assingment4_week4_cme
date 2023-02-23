@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const CardOnlineContainer = styled.div`
 margin: 1rem 0;
-width: 18.25rem;
+width: 100%;
 height: 4rem;
 display: flex;
 align-items: center;
@@ -12,7 +12,7 @@ border-radius: 1rem;
 border: 2px solid transparent;
 
 &:hover {
-    transition: all 0.4s ease;
+        transition: all 0.4s ease;
         cursor: pointer;
         border: 2px solid #888;
     }
