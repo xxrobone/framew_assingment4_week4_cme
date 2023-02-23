@@ -9,16 +9,19 @@ import StarIcon from '../../assets/icons/akar-icons_star.svg'
 
 const SidebarWrapper = styled.div`
     padding: 2.625rem 0;
-    width: 125px;
+    width: 7.625rem;
     height: 100%;
-    position: relative;
+    position: absolute;
     top: 0;
-    left: 0;   
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
     background-color: #1d1e22;
-    box-shadow: 4px 5px 40px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.185);
 
     &>img {
-        margin-top: 0.75rem;
+        margin: 1rem auto;
     }
 
     &>aside {
@@ -34,14 +37,14 @@ const SidebarWrapper = styled.div`
 
 const IconContainer = styled.div`
     margin: 1rem 0;
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     display: grid;
     place-content: center;
 
     &>img {
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 `
 const IconWrapper = ({iconImg}) => {
@@ -55,7 +58,7 @@ const IconWrapper = ({iconImg}) => {
 const Sidebar = () => {
   return (
       <SidebarWrapper>
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="logo" />
           <aside>
               <IconWrapper iconImg={HomeIcon} />
               <IconWrapper iconImg={FriendsIcon} />

@@ -2,11 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-margin-top: 2.25rem;
-padding: 0 2.625rem;
+margin: 2.25rem auto 0;
 position: absolute;
 top: 0;
-right: 0;
+left: 10.625rem;
 height: 10vh;
 width: 80%;
 display: flex;
@@ -16,16 +15,23 @@ justify-content: space-between;
 text-transform: uppercase;
 background-color: transparent;
 
-&>div {
-  display: flex;
-  flex-direction: row;
-}
-
 @media screen and (min-width: 769px) {
-    padding: 0 3.125rem 0 0;
+    padding: 0;
     flex-direction: row;
     justify-content: space-between;
   }
+
+&>div {
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (min-width: 769px) {
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 `;
 
 /* const Logo = styled.h1`
@@ -42,7 +48,6 @@ const Header = ({children}) => {
 
     return ( 
         <StyledHeader>
-            {/* <Logo>VGS - video game search</Logo> */}
             {children}
         </StyledHeader>
      );

@@ -30,6 +30,7 @@ const Btn = styled.button`
     }
 
     &:hover:before {
+      cursor: pointer;
       background-image: radial-gradient(circle, #3DBDA7, #067D71);
     }
 

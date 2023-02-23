@@ -3,13 +3,17 @@ import styled from 'styled-components'
 import { RiSearch2Line } from 'react-icons/ri'
 
 const Form = styled.form`
-width: 473px;
-height: 50px;
+max-width: 29.5rem;
+height: 3.125rem;
 position: relative;
 display: flex;
 align-items: center;
 border-radius: 30px;
 background-color: #646E6D33;
+
+@media screen and (min-width: 769px) {
+    width: 29.5rem;
+  }
 
 
 .submit_btn {
@@ -34,7 +38,7 @@ background-color: #646E6D33;
 `;
 
 const Input = styled.input`
-margin: 0 rem;
+margin: 0;
 padding: 4px 6px;
 font-size: 0.75rem;
 border: 0;

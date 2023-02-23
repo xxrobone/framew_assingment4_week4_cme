@@ -12,8 +12,8 @@ import CardCharacter from '../../assets/images/Image-2.png'
 
 const CardGameContainer = styled.div`
     position: relative;
-    width: 850px;
-    height: 320px;
+    max-width: 53.125rem;
+    max-height: 20rem;
     border-radius: 3.125rem;
 
     /* &:hover {
@@ -73,8 +73,8 @@ const CardTitle = styled.div`
 
 const AddToCardContainer = styled.div`
   padding: 0 0.5rem;
-  min-width: 239px;
-  height: 56px;
+  min-width: 15rem;
+  height: 3.5rem;
   position: relative;
   /* left: 4rem;
   bottom: 3.5rem; */

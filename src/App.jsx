@@ -21,6 +21,11 @@ import IconBtn from './components/buttons/iconbtn/IconBtn';
 import ProfileImg from './components/profileimage/ProfileImg';
 
 // styles
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './components/Theme/GlobalStyles';
+import { useDarkMode } from './components/themetoggler/UseDarkMode';
+import { lightTheme, darkTheme } from './components/Theme/Themes'
+import ThemeToggle from './components/themetoggler/ThemeToggle';
 const MainPage = styled.div`
 height: 100vh;
 display: flex;
@@ -67,37 +72,10 @@ const Form = styled.form`
 }
 `;
 
-
 const API_URL = import.meta.env.VITE_APP_API_URL
 const API_KEY = import.meta.env.VITE_APP_API_KEY
 const API_GAMES = `${API_URL}?key=${API_KEY}`
 const API_SEARCH = `${API_URL}?key=${API_KEY}&search=`
-
-const array = [
-
-    { id: 3498, slug: 'grand-theft-auto-v', name: 'Grand Theft Auto V', released: '2013-09-17', tba: false, },
-  
-    { id: 3328, slug: 'the-witcher-3-wild-hunt', name: 'The Witcher 3: Wild Hunt', released: '2015-05-18', tba: false, },
-  
-    { id: 4200, slug: 'portal-2', name: 'Portal 2', released: '2011-04-18', tba: false, },
-  
-    { id: 5286, slug: 'tomb-raider', name: 'Tomb Raider (2013)', released: '2013-03-05', tba: false, },
-  
-    { id: 4291, slug: 'counter-strike-global-offensive', name: 'Counter-Strike: Global Offensive', released: '2012-08-21', tba: false, },
-  
-    { id: 13536, slug: 'portal', name: 'Portal', released: '2007-10-09', tba: false, },
-   
-    { id: 12020, slug: 'left-4-dead-2', name: 'Left 4 Dead 2', released: '2009-11-17', tba: false, },
-  
-    { id: 5679, slug: 'the-elder-scrolls-v-skyrim', name: 'The Elder Scrolls V: Skyrim', released: '2011-11-11', tba: false, },
-   
-    { id: 4062, slug: 'bioshock-infinite', name: 'BioShock Infinite', released: '2013-03-26', tba: false, },
-  
-    { id: 802, slug: 'borderlands-2', name: 'Borderlands 2', released: '2012-09-18', tba: false, },
-   
-    { id: 28, slug: 'red-dead-redemption-2', name: 'Red Dead Redemption 2', released: '2018-10-26', tba: false, },
-];
-
 
 function App() {
   const [games, setGames] = useState([]);
@@ -105,15 +83,17 @@ function App() {
   const[ isLoading, setLoading ] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
-  console.log(games)
- 
+  const [theme, themeToggler, mountedComponent] = useDarkMode();
+
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
   
 
-  useEffect(() => {    
-    /* getGames(API_GAMES)
+  /* useEffect(() => {    
+    getGames(API_GAMES)
     console.log(games) 
-    setLoading(false) */
-  }, []) 
+    setLoading(false)
+  }, [])  */
+  if (!mountedComponent) return <div />;
 
   const getGames = async(URL) => {
     try {
@@ -147,12 +127,15 @@ function App() {
 
   return (
     <BrowserRouter>
-    <MainPage>
+      <div className='App'>
+        <ThemeProvider theme={themeMode}>     
+        <ThemeToggle theme={theme} toggleTheme={themeToggler} />  
+        <GlobalStyles />
         <Header>
           <Search games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />
           <div>
-            <IconBtn iconImg={BellIcon}/>
-            <IconBtn iconImg={PaperPlaneIcon} dark />
+            <IconBtn iconImg={BellIcon} dark />
+            <IconBtn iconImg={PaperPlaneIcon} />
             <ProfileImg img={HeaderProfileImg} />
           </div>
         </Header>
@@ -161,8 +144,9 @@ function App() {
          {/*  <Route path='/' element={<Home games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
           <Route path="/games/:gameId" element={<GameDetails games={games} />} /> */}
           <Route path="/" element={<Vga />} />
-        </Routes>
-      </MainPage>
+          </Routes>
+          </ThemeProvider>
+          </div>
       </BrowserRouter>
   );   
 }

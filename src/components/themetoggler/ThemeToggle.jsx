@@ -1,13 +1,16 @@
 import React from 'react'
-import { func, string } from 'prop-types';
 import styled from "styled-components"
 import { RiSunLine, RiMoonLine } from 'react-icons/ri'
 
 const SunLight = styled(RiSunLine)`
 outline:none;
+width: 32px;
+height: 32px;
 `
 const MoonDark = styled(RiMoonLine)`
 outline: none;
+width: 32px;
+height: 32px;
 `
 
 const Button = styled.button`
@@ -29,8 +32,8 @@ const ThemeToggle = ({theme,  toggleTheme }) => {
       <>
       <Button onClick={toggleTheme}>
       {theme === "light" ?
-      <MoonDark width="26" height="26" viewBox="0 0 26 26" style={{ fill: "#fafafa" }}></MoonDark>
-      :<SunLight width="26" height="26" viewBox="0 0 26 26" style={{ fill: "#Fec" }}></SunLight>
+      <MoonDark style={{ fill: "#828282" }}></MoonDark>
+      :<SunLight style={{ fill: "#eeeeee" }}></SunLight>
     } 
     </Button>
 
@@ -38,8 +41,5 @@ const ThemeToggle = ({theme,  toggleTheme }) => {
     </>
     );
 };
-ThemeToggle.propTypes = {
-    theme: string.isRequired,
-    toggleTheme: func.isRequired,
-}
+
 export default ThemeToggle;

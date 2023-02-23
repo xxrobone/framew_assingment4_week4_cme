@@ -9,7 +9,7 @@ const IconContainer = styled.div`
     place-content: center;
     border-radius: 50%;
 
-    background: ${props =>  props.dark ? '#3DBDA7' :'linear-gradient(to top, #1D1E22,#393939)'};
+    background: ${props =>  props.dark ? 'linear-gradient(to top, #1D1E22,#393939)' : '#3DBDA7'};
 
 
     &>img {

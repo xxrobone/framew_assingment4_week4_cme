@@ -8,6 +8,14 @@ height: 64px;
 display: flex;
 align-items: center;
 /* background-color: #23212262; */
+border-radius: 1rem;
+border: 2px solid transparent;
+
+&:hover {
+    transition: all 0.4s ease;
+        cursor: pointer;
+        border: 2px solid #888;
+    }
 
 &>.small_img {
     margin-right: 1rem;
@@ -34,7 +42,6 @@ align-items: center;
         color: #888;
         /* color: #969696; */
     }
-
 
 }
 `

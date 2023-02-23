@@ -22,11 +22,11 @@ import RightSide from '../components/rightside/RightSide'
 // slider recently played
 
 const VgaMain = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
   position: relative;
   top: 8.75rem;
-  left: 4.125rem;
+  left: 10.625rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
