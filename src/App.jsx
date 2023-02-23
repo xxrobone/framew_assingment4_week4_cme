@@ -26,6 +26,7 @@ import { GlobalStyles } from './components/Theme/GlobalStyles';
 import { useDarkMode } from './components/themetoggler/UseDarkMode';
 import { lightTheme, darkTheme } from './components/Theme/Themes'
 import ThemeToggle from './components/themetoggler/ThemeToggle';
+
 const MainPage = styled.div`
 height: 100vh;
 display: flex;

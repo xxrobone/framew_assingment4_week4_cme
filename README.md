@@ -19,6 +19,9 @@ https://www.figma.com/file/xLjiChv0EwEWMOiGbGornX/Gaming-Dashboard-(Community)?n
 - fix design
 - create animations with framer motion ?
 
+- converted all pixel values to rems using 
+https://nekocalc.com/px-to-rem-converter
+
 ## ENV
 For the ENV files it was almost same as REACT_APP_ instead use VITE_
 

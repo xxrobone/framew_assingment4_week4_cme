@@ -10,8 +10,8 @@ import CardHeadSet from '../../assets/images/Image-1.png'
 const CardItemContainer = styled.div`
     margin-top: 5rem;
     position: relative;
-    width: 358px;
-    height: 440px;
+    width: 22.375rem;
+    height: 27.5rem;
     border-radius: 2.5rem;
     background: linear-gradient(to top left, #15151580 40%, #bd090978);
     overflow: hidden;
@@ -36,8 +36,8 @@ const CardItemContainer = styled.div`
       &>img {
         margin-top: 0.1rem;
       margin-left: 1rem;
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
     }
     }
 

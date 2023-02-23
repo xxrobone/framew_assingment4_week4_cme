@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const CardContainer = styled.div`
 margin: 1rem 0;
-width: 292px;
-height: 64px;
+width: 18.25rem;
+height: 4rem;
 display: flex;
 align-items: center;
 /* background-color: #23212262; */
@@ -19,8 +19,8 @@ border: 2px solid transparent;
 
 &>.small_img {
     margin-right: 1rem;
-    width: 64px !important;
-    height: 64px;
+    width: 4rem !important;
+    height: 4rem;
     object-fit: cover;
     object-position: 10% 20%;
     border-radius: 1rem;

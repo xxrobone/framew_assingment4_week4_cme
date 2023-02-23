@@ -9,7 +9,7 @@ import StarIcon from '../../assets/icons/akar-icons_star.svg'
 
 const SidebarWrapper = styled.div`
     padding: 2.625rem 0;
-    width: 7.625rem;
+    width:   4.125rem;
     height: 100%;
     position: absolute;
     top: 0;
@@ -19,6 +19,10 @@ const SidebarWrapper = styled.div`
     align-items: center;   
     background-color: #1d1e22;
     box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.185);
+
+    @media screen and (min-width: 769px) {
+        width: 7.625rem;
+  }
 
     &>img {
         margin: 1rem auto;
@@ -43,8 +47,13 @@ const IconContainer = styled.div`
     place-content: center;
 
     &>img {
-        width: 1.5rem;
+        width: 1.125rem;
+        height: 1.125rem;
+
+        @media screen and (min-width: 769px) {
+            width: 1.5rem;
         height: 1.5rem;
+  }
     }
 `
 const IconWrapper = ({iconImg}) => {

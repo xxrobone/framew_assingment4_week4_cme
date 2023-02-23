@@ -13,14 +13,24 @@ import ChatAddIcon from '../../../assets/icons/akar-icons_chat-add.svg'
 // arrow down stroke 067D71 background-radial quarter round top right
 
 const Button = styled.button`
-    width: 70px;
-    height: 70px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     background-color: #3DBDA7;
 
+    @media screen and (min-width: 769px) {
+      width: 4.375rem;
+    height: 4.375rem;
+  }
+
     &>img {
-        width: 38px;
-        height: 38px;
+        width: 2rem;
+        height: 2rem;
+
+        @media screen and (min-width: 769px) {
+        width: 2.375rem;
+        height: 2.375rem;
+  }
     }
 `
 

@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 
   body {
+      max-width: 100%;
       min-width: 320px;
       min-height: 100vh;  
       position: relative;
@@ -15,7 +16,6 @@ export const GlobalStyles = createGlobalStyle`
       overflow-x: hidden;
 
       @media screen and (min-width: 768px) {
-
             margin: 0 auto;
             max-width: 80%;
       }

@@ -3,22 +3,25 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.header`
 margin: 2.25rem auto 0;
-position: absolute;
+position: relative;
 top: 0;
 left: 10.625rem;
 height: 10vh;
-width: 80%;
+width: 100%;
 display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: center;
 justify-content: space-between;
 text-transform: uppercase;
 background-color: transparent;
 
 @media screen and (min-width: 769px) {
-    padding: 0;
-    flex-direction: row;
-    justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 10.625rem;
+  height: 10vh;
+  width: 100%;
+  padding: 0;  
   }
 
 &>div {
