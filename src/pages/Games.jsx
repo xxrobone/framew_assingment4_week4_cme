@@ -58,7 +58,7 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
 `;
 
 
-function Home ({games, handleOnChange, handleOnSubmit, searchQuery}) {
+function Games ({games, handleOnChange, handleOnSubmit, searchQuery}) {
 /* 
   const [games, setGames] = useState([]);
   const[ isLoading, setLoading ] = useState(true);
@@ -126,4 +126,4 @@ function Home ({games, handleOnChange, handleOnSubmit, searchQuery}) {
   );
 }
 
-export default Home;
+export default Games;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import styled from 'styled-components';
-import Home from './pages/Home';
+import Games from './pages/Games';
 import GameDetails from './pages/GameDetails';
 import Vga from './pages/Vga';
 /* import { RiSearch2Line } from 'react-icons/ri'; */
@@ -87,14 +87,7 @@ function App() {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
 
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
-  
 
-  /* useEffect(() => {    
-    getGames(API_GAMES)
-    console.log(games) 
-    setLoading(false)
-  }, [])  */
-  if (!mountedComponent) return <div />;
 
   const getGames = async(URL) => {
     try {
@@ -125,6 +118,13 @@ function App() {
     setSearchQuery(e.target.value)
   }
 
+  useEffect(() => {    
+    getGames(API_GAMES)
+    console.log(games) 
+    setLoading(false)
+  }, []) 
+  if (!mountedComponent) return <div />;
+
 
   return (
     <BrowserRouter>
@@ -142,8 +142,8 @@ function App() {
         </Header>
         <Sidebar />
         <Routes>
-         {/*  <Route path='/' element={<Home games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
-          <Route path="/games/:gameId" element={<GameDetails games={games} />} /> */}
+          <Route path='/games' element={<Games games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
+          <Route path="/games/:gameId" element={<GameDetails games={games} />} />
           <Route path="/" element={<Vga />} />
           </Routes>
           </ThemeProvider>

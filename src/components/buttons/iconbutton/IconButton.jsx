@@ -18,6 +18,10 @@ const Button = styled.button`
     border-radius: 50%;
     background-color: #3DBDA7;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @media screen and (min-width: 769px) {
       width: 4.375rem;
     height: 4.375rem;

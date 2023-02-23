@@ -29,11 +29,11 @@ background-color: #646E6D33;
     font-size: 1.6rem;
     filter: drop-shadow(1px 1px 4px #121212);
 
-    :hover,
+    /* :hover,
     :focus {
         cursor: pointer;
         background: radial-gradient(#393939, #1D1E22);
-  } 
+  }  */
 }
 `;
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Logo from '../../assets/images/xbox_logo.png'
 import IconButton from '../buttons/iconbutton/IconButton'
@@ -10,10 +11,11 @@ import StarIcon from '../../assets/icons/akar-icons_star.svg'
 const SidebarWrapper = styled.div`
     padding: 2.625rem 0;
     width:   4.125rem;
-    height: 100%;
+    height: 100svh;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     align-items: center;   
@@ -66,12 +68,18 @@ const IconWrapper = ({iconImg}) => {
 
 const Sidebar = () => {
   return (
-      <SidebarWrapper>
+      <SidebarWrapper>  
+         <Link to='/'>  
           <img src={Logo} alt="logo" />
+          </Link>          
           <aside>
+              <Link to='/'>
               <IconWrapper iconImg={HomeIcon} />
-              <IconWrapper iconImg={FriendsIcon} />
+              </Link>     
+              <IconWrapper iconImg={FriendsIcon} />                  
+              <Link to='/games'>
               <IconButton />
+              </Link>
               <IconWrapper iconImg={ShopIcon} />
               <IconWrapper iconImg={StarIcon} />
           </aside>
