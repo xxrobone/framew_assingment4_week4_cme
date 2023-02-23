@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { AnimatePresence, motion } from 'framer-motion'
 import ShopButton from '../buttons/shopbutton/ShopButton'
 // card with a img going over the card, add to card button and price
 import CardBg from '../../assets/images/Image-9.png'
@@ -19,7 +20,7 @@ const CardContainer = styled.div`
 `
 
 
-const CardGameContainer = styled.div`
+const CardgameContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
@@ -37,7 +38,7 @@ const CardGameContainer = styled.div`
 
       &>img {
         border-radius: 3.125rem;
-        opacity: 0.5;
+        /* opacity: 0.5; */
       }
     }
 
@@ -108,11 +109,22 @@ const AddToCardContainer = styled.div`
 
 const Card1 = ({img}) => {
   return (
-    <CardGameContainer>
-      <div>
-        <img src={CardBg} alt="" />
-      </div>
-      <img src={CardCharacter} alt="" />
+    <AnimatePresence>
+      <CardgameContainer >
+      <motion.div>
+          <motion.img src={CardBg} alt=""
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.4 }}
+            exit={{ opacity: 0 }}
+            transition={{duration: 1}}
+          />
+      </motion.div>
+        <motion.img src={CardCharacter} alt=""
+        initial={{ opacity: 0, y: 40, x: 30 }}
+        animate={{ opacity: 1,  y: 0, x: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{duration: 1.6, delay: 0.4}}
+        />
       <CardInfo>
 
         <div>
@@ -130,16 +142,27 @@ const Card1 = ({img}) => {
       </AddToCardContainer>
 
       </CardInfo>
-    </CardGameContainer>
+      </CardgameContainer>
+      </AnimatePresence>
   )
 }
 const Card2 = ({img}) => {
   return (
-    <CardGameContainer>
+    <CardgameContainer>
       <div>
-        <img src={CardBg2} alt="" />
+        <motion.img src={CardBg2} alt=""
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+          exit={{ opacity: 0 }}
+          transition={{duration: 1}}
+        />
       </div>
-      <img src={CardCharacter2} alt="" style={{right: '-2rem', bottom: '-1rem'}} />
+      <motion.img src={CardCharacter2} alt="" style={{ right: '-2rem', bottom: '-1rem' }}
+      initial={{ opacity: 0, y: 40, x: 30 }}
+      animate={{ opacity: 1,  y: 0, x: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{duration: 1.6, delay: 0.4}}
+      />
       <CardInfo>
 
         <div>
@@ -157,7 +180,7 @@ const Card2 = ({img}) => {
       </AddToCardContainer>
 
       </CardInfo>
-    </CardGameContainer>
+    </CardgameContainer>
   )
 }
 
@@ -168,7 +191,7 @@ const CardGame = ({ img }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShow(<Card2 />)
-    }, 10000);
+    }, 6000);
   
     return () => clearInterval(interval);
   }, []);
@@ -176,7 +199,7 @@ const CardGame = ({ img }) => {
   useEffect(() => {
     const interval2 = setInterval(() => {
       setShow(<Card1 />)
-    }, 20000);
+    }, 12000);
   
     return () => clearInterval(interval2);
   }, []);
@@ -186,7 +209,7 @@ const CardGame = ({ img }) => {
     <CardContainer>
       {show}
     </CardContainer>
-   /*  <CardGameContainer>
+   /*  <CardgameContainer>
       <div>
         <img src={CardBg} alt="" />
       </div>
@@ -208,7 +231,7 @@ const CardGame = ({ img }) => {
       </AddToCardContainer>
 
       </CardInfo>
-    </CardGameContainer> */
+    </CardgameContainer> */
   )
 }
 
