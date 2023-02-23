@@ -128,7 +128,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='App'>
+      <div>
         <ThemeProvider theme={themeMode}>     
         <ThemeToggle theme={theme} toggleTheme={themeToggler} />  
         <GlobalStyles />

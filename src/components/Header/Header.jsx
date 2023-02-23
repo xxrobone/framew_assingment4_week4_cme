@@ -20,8 +20,7 @@ background-color: transparent;
   top: 0;
   left: 10.625rem;
   height: 10vh;
-  width: 100%;
-  padding: 0;  
+  padding: 0 10%;  
   }
 
 &>div {
