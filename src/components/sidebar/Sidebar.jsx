@@ -26,10 +26,14 @@ const SidebarWrapper = styled.div`
         width: 7.625rem;
   }
 
-    &>img {
-        margin: 1rem auto;
-    }
+  &>a {
+    
+      &>img {
+          margin: 1rem auto;
+      }
 
+  }
+  
     &>aside {
         margin-top: 30%;
         width: 100%;

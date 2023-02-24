@@ -130,10 +130,17 @@ const Card1 = ({img}) => {
         <div>
         <CardYear>
           2020
-        </CardYear>
+            </CardYear>
+            <motion.div
+            initial={{ opacity: 0,  x: -100 }}
+            animate={{ opacity: 1,  x: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{duration: 1,}}
+            >
         <CardTitle>
           Assassins creed valhalla
         </CardTitle>
+            </motion.div>
 
         </div>
       <AddToCardContainer>
@@ -169,9 +176,16 @@ const Card2 = ({img}) => {
         <CardYear>
           2020
         </CardYear>
+        <motion.div
+            initial={{ opacity: 0,  x: -100 }}
+            animate={{ opacity: 1,  x: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{duration: 1,}}
+            >
         <CardTitle>
           Ghost of Tsushima
         </CardTitle>
+            </motion.div>
 
         </div>
       <AddToCardContainer>
