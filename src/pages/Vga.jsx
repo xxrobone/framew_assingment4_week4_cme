@@ -8,6 +8,9 @@ import CardSmall from '../components/cards/CardSmall'
 import GameImg1 from '../assets/images/Image-7.png'
 import GameImg2 from '../assets/images/Image-10.png'
 import GameImg3 from '../assets/images/Image-6.png'
+import GameImg4 from '../assets/images/Image-6.png'
+import GameImg5 from '../assets/images/Image-6.png'
+import GameImg6 from '../assets/images/Image-6.png'
 import RightSide from '../components/rightside/RightSide'
 // this is from getting an idea from developer Fredrik Carlsson
 // challenge myself to try to implement a more unique and professional design
@@ -75,7 +78,8 @@ const VgaMain = styled.div`
 
 
 
-const Vga = () => {
+const Vga = ({ games }) => {
+  
   return (
     <VgaMain>
       <article>
@@ -84,10 +88,19 @@ const Vga = () => {
         <CardItem />
         <section>
           <h4>Recently played games</h4>
-        <CardSlider>
-          <CardSmall img={GameImg1} />
-          <CardSmall img={GameImg2} />
+            <CardSlider>
+              {games.map((g => { 
+
+                return (
+                  < CardSmall img = { g.background_image } title = { g.name } />
+
+                )
+               } ))}
+          {/* <CardSmall img={GameImg2} />
           <CardSmall img={GameImg3} />
+          <CardSmall img={GameImg4} />
+          <CardSmall img={GameImg5} />
+          <CardSmall img={GameImg6} /> */}
         </CardSlider>
         </section>
       </div>

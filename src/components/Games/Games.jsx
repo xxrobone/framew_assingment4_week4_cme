@@ -7,10 +7,12 @@ import {SiNintendo } from 'react-icons/si'
 
 
  const GameCard = styled.li`
-  position: relative;
   margin: 1.5rem 0.5rem;
-  width: 16rem;
+  width: 22.375rem;
   height: 16rem;
+  position: relative;
+  display: grid;
+  place-content: center;
   background-color: rgb(0, 0, 0);
   text-align: center;
   overflow: hidden;
@@ -21,6 +23,19 @@ import {SiNintendo } from 'react-icons/si'
   @media screen and (min-width: 769px) {
     margin: 1.5rem 2rem;
   }
+
+  
+&>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 1;
+}
+
  
 &>h4 {
   height: fit-content;
@@ -29,33 +44,39 @@ import {SiNintendo } from 'react-icons/si'
 }
 
  
-.game-info {
+.game_info {
+  padding: 0.25rem 0.5rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.25rem 0.5rem;
+  z-index: 2;
+  
 }
-
-&>img {
-  width: 100%;
-  height: 146px;
-  top:0;
-}
-
 span {
     padding: 0.25rem;
     font-size: 0.8rem;
     font-weight: 500;
     color: #888;
+    text-shadow: 1px 1px black;
 }
 
 &>a {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-decoration: none;
+
   &>p {
     padding: 0.25rem 0.5rem;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+   
     font-size: 0.6rem;
     color: #f2f0f0;
     background-color: black;
@@ -102,7 +123,7 @@ const GameItem = ({game}) => {
   return(    
       <GameCard className="game" >
       <img src={game.background_image} alt={game.name} />
-            <div className="game-info">
+            <div className="game_info">
               <h4>{game.name.toUpperCase()}</h4>
               <div>
                 <span>Score: {game.rating}/5</span>
@@ -141,7 +162,7 @@ const GameItem = ({game}) => {
           <Link to={`/games/${game.id}`}>
                       <p>
                         Read more...</p>                    
-                    </Link>
+          </Link>
       </GameCard>
   );
 }

@@ -25,4 +25,9 @@
   max-width: 80%;
 }
 
+button {
+  outline: none;
+  border: none;
+}
+
 

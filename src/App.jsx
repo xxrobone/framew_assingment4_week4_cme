@@ -78,9 +78,12 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY
 const API_GAMES = `${API_URL}?key=${API_KEY}`
 const API_SEARCH = `${API_URL}?key=${API_KEY}&search=`
 
+const UPCOMING_GAMES = `${API_URL}?key=${API_KEY}&dates=2022-01-01,2023-12-01&ordering=-released&page_size=40`;
+const TOP_GAMES = `${API_URL}?key=${API_KEY}&dates=2010-01-01,2023-01-01&ordering=-rating&page_size=20&metacritic=90,100`;
+const TOP_LASTYEAR = `${API_URL}?key=${API_KEY}&dates=2022-01-01,2022-12-30&ordering=-rating&page_size=20&metacritic=80,100`;
+
 function App() {
   const [games, setGames] = useState([]);
-  /* const [games, setGames] = useState(array); */
   const[ isLoading, setLoading ] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -108,9 +111,8 @@ function App() {
   const handleOnSubmit = (e) => {
     e.preventDefault()
     if (searchQuery) {
-      getGames(API_SEARCH + searchQuery)
-
-      setSearchQuery('')
+      getGames(API_SEARCH + searchQuery);
+      setSearchQuery('');
     }
   }
 
@@ -125,6 +127,8 @@ function App() {
   }, []) 
   if (!mountedComponent) return <div />;
 
+  const recentGames = games.slice(0, 5)
+console.log(recentGames)
 
   return (
     <BrowserRouter>
@@ -144,7 +148,7 @@ function App() {
         <Routes>
           <Route path='/games' element={<Games games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
           <Route path="/games/:gameId" element={<GameDetails games={games} />} />
-          <Route path="/" element={<Vga />} />
+          <Route path="/" element={<Vga games={recentGames} />} />
           </Routes>
           </ThemeProvider>
           </div>

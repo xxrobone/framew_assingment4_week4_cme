@@ -64,7 +64,7 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
 `;
 
 
-function Games ({games, handleOnChange, handleOnSubmit, searchQuery}) {
+function Games ({games}) {
 /* 
   const [games, setGames] = useState([]);
   const[ isLoading, setLoading ] = useState(true);

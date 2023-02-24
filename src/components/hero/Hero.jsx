@@ -9,7 +9,7 @@ const HeroWrapper = styled.div`
     max-width: 800px;
 
     &>img {
-        width: 100%;
+        width: 80%;
         height: auto;
         border-radius: 2.5rem;
     }

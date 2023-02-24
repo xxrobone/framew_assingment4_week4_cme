@@ -17,6 +17,8 @@ const Button = styled.button`
     height: 3rem;
     border-radius: 50%;
     background-color: #3DBDA7;
+    display: grid;
+    place-content: center;
 
     &:hover {
       cursor: pointer;
@@ -28,7 +30,7 @@ const Button = styled.button`
   }
 
     &>img {
-        width: 2rem;
+        width: 2rem
         height: 2rem;
 
         @media screen and (min-width: 769px) {

@@ -54,7 +54,8 @@ background-color: transparent;
 /* box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295); */
 `;
 
-const Search = ({games, handleOnChange, handleOnSubmit, searchQuery}) => {
+const Search = ({ games, handleOnChange, handleOnSubmit, searchQuery }) => {
+  
   return (
       <div>
           <Form onSubmit={handleOnSubmit} id="form1">
