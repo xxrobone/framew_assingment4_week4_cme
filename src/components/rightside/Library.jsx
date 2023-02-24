@@ -22,6 +22,7 @@ const LibraryContainer = styled.div`
 const Library = ({children}) => {
   return (
     <LibraryContainer>
+      <p>Library</p>
       <div>
       {children}
       </div>

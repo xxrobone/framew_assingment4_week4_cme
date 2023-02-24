@@ -9,7 +9,8 @@ const OnlineContainer = styled.div`
 
 const Online = ({children}) => {
   return (
-      <OnlineContainer>
+    <OnlineContainer>
+      <p>Online friends</p>
           {children}
     </OnlineContainer>
   )
