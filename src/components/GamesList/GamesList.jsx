@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import GameItem from '../Games/Games'
 
 const GamesContainer = styled.ul`
-    margin-top: 20vh;
+    margin-top: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

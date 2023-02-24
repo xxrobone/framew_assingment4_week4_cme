@@ -16,6 +16,12 @@ const HomeWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    &>h1 {
+      margin: 0.5rem 0 1rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
 `
 
 const Form = styled.form`
@@ -106,7 +112,7 @@ function Games ({games, handleOnChange, handleOnSubmit, searchQuery}) {
   return (
     <HomeWrapper>
     <Hero />
-      <Form onSubmit={handleOnSubmit} id="form1">
+      {/* <Form onSubmit={handleOnSubmit} id="form1">
             <Input
               className="search" 
                 type="text" 
@@ -120,7 +126,8 @@ function Games ({games, handleOnChange, handleOnSubmit, searchQuery}) {
               type="submit"
               form="form1"
               ><RiSearch2Line /></button>
-          </Form>         
+          </Form>          */}
+      <h1>GAMES</h1>
       <GamesList games={games} />      
     </HomeWrapper>
   );

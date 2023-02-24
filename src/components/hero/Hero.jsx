@@ -5,12 +5,13 @@ import BGMobile from '../../assets/hero_mobile.png'
 import { useIsDesktop } from '../../hooks/useMediaQuery'
 
 const HeroWrapper = styled.div`
-    margin: 0 auto;
+    margin: 20vh auto 5vh;
     max-width: 800px;
 
     &>img {
         width: 100%;
         height: auto;
+        border-radius: 2.5rem;
     }
 `;
 

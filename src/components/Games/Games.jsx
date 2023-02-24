@@ -9,14 +9,14 @@ import {SiNintendo } from 'react-icons/si'
  const GameCard = styled.li`
   position: relative;
   margin: 1.5rem 0.5rem;
-  max-width: 16rem;
+  width: 16rem;
   height: 16rem;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   text-align: center;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 2.5rem;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  color: #2e2e2e;
+  color: #f4f4f4;
 
   @media screen and (min-width: 769px) {
     margin: 1.5rem 2rem;
@@ -43,8 +43,10 @@ import {SiNintendo } from 'react-icons/si'
 }
 
 span {
-  font-size: 1rem;
-  padding: 0.2rem;
+    padding: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #888;
 }
 
 &>a {
