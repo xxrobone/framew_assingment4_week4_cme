@@ -161,7 +161,7 @@ useEffect(() => {
               form="form1"
               ><RiSearch2Line /></button>
           </Form>          */}
-      <h1>GAMES</h1>
+      <h1>Search Results:</h1>
         <GamesList games={games} />   
       </div>
       <div>

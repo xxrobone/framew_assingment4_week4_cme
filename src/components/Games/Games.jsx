@@ -83,39 +83,6 @@ span {
   }
 }
  `;
-/*
- &>.game-review {
-    position: absolute;
-  background: #e1e2e3;
-  color: black;
-  padding: 1rem 1rem;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(100%) translateX(100%) rotate(20deg);
-  transition: transform 0.8s ease-in-out;
-  overflow: hidden;
- }
-
- &:hover .game-review {
-    opacity: 1;
-  }
-  &:focus .game-review {
-      opacity: 1;
-  }
-
-  .game:hover .game-review {
-    transform: translateY(0%) translateX(0%);
-  }
-`;
- */
-
-
 
 const GameItem = ({game}) => {  
 
@@ -144,20 +111,7 @@ const GameItem = ({game}) => {
                     }</span>
                     </>
                   ))}
-              </div>              
-              
-              </div>
-  
-            
-             <div className="game-review">
-              {game.shot_screenthot} 
-              {/* 
-              was thinkin of adding trailers, but its premium price plan
-              {game.clip && <ReactPlayer url={game.clip.clip}
-              playing={false}
-              width={240}
-              height={180}
-              controls = {true} */}             
+              </div>  
           </div> 
           <Link to={`/games/${game.id}`}>
                       <p>

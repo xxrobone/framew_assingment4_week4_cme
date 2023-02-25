@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { RiPlaystationLine, RiXboxFill, RiMacLine, RiWindowsFill, RiAndroidLine, RiAppleFill } from 'react-icons/ri'
 import { DiLinux } from 'react-icons/di';
 import { SiNintendo } from 'react-icons/si';
@@ -129,10 +130,29 @@ position: relative;
       cursor: pointer;
       background-image: radial-gradient(circle, #3DBDA7, #067D71);
     }
-
 `
 
+const MsgContainer = styled.div`
+    position: absolute;
+    top: 27.5%;
+    right: 12.5vw;
+    &>p {
+      min-width: 300px;
+      padding: 1rem 2rem;
+      position: absolute;
+      color: white;
+      border-radius: 2rem;
+      border: 1px solid #888;
+    }
+`
+
+const variants = {
+  show: { opacity: 1, x: 0 },
+  hide: { opacity: 0, x: 300 },
+}
+
 const GameDetails = ({ games }) => {
+  const [showMsg, setShowMsg] = useState(false)
   const { gameId } = useParams();
   console.log(gameId)
 
@@ -154,15 +174,27 @@ const GameDetails = ({ games }) => {
     window.localStorage.setItem('mygames', JSON.stringify(mygames))
   }
 
-  function handleClick(e) {
+  function handleClick() {
     saveGame(gameId)
+    setShowMsg(showMsg => !showMsg)
+    console.log(showMsg)
+    setTimeout(() => {
+      setShowMsg(false)
+    }, 3000)
   }
 
   return (
-    <>
-      
+    <>      
+      <MsgContainer>
+        <motion.p
+        variants={variants}
+        animate={showMsg ? "show" : "hide"}
+        >
+          Saved game to library
+        </motion.p>
+      </MsgContainer>
       <SaveGame>
-        <SaveBtn onClick={(e) => handleClick(e)}>Save game</SaveBtn>
+        <SaveBtn onClick={() => handleClick()}>Save game</SaveBtn>
       </SaveGame>
     <Details>           
         {games && games.map((game) => {
