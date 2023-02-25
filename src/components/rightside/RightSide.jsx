@@ -1,16 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Library from './Library'
-import CardGameItem from '../cards/CardGameItem'
-import Img1 from '../../assets/images/Image-10.png'
-import Img2 from '../../assets/images/Image-4.png'
-import Img3 from '../../assets/images/Image-6.png'
-import ImgOnline1 from '../../assets/images/Image-5.png'
-import ImgOnline2 from '../../assets/images/Image-8.png'
-import ImgOnline3 from '../../assets/images/Image-5.png'
-import Mail from './Mail'
-import Online from './Online'
-import CardOnline from '../cards/CardOnline'
+
 
 const SidebarContainer = styled.div`
 // had to count header padding + 1rem margin for icons to adjust right side distance
@@ -41,24 +31,10 @@ const SidebarContainer = styled.div`
     }
 `
 
-const RightSide = () => {
+const RightSide = ({ children }) => {
   return (
     <SidebarContainer>
-      <Library>
-        <CardGameItem img={Img1} title='Minecraft' platforms='xbox, ps5, pc' />
-        <CardGameItem img={Img2} title='Assassins creed' platforms='xbox, ps5, pc' />
-        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
-        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
-        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
-      </Library>
-      <Mail />
-      <Online>
-        <CardOnline img={ImgOnline1} title='YeahBoi2023' playing='Fortnite'/>
-        <CardOnline img={ImgOnline2} title='KidRage06' playing='Rocket League'/>
-        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
-        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
-        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
-      </Online>
+      {children}
       <div className='circle'></div>
     </SidebarContainer>
   )

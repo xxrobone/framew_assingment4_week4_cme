@@ -9,7 +9,7 @@ import {SiNintendo } from 'react-icons/si'
  const GameCard = styled.li`
   margin: 1.5rem 0.5rem;
   width: 22.375rem;
-  height: 16rem;
+  height: 14.5rem;
   position: relative;
   display: grid;
   place-content: center;

@@ -13,7 +13,20 @@ import GameImg4 from '../assets/images/Image-6.png'
 import GameImg5 from '../assets/images/Image-6.png'
 import GameImg6 from '../assets/images/Image-6.png'
 import RightSide from '../components/rightside/RightSide'
-// this is from getting an idea from developer Fredrik Carlsson
+
+import Library from '../components/rightside/Library'
+import CardGameItem from '../components/cards/CardGameItem'
+import Img1 from '../assets/images/Image-10.png'
+import Img2 from '../assets/images/Image-4.png'
+import Img3 from '../assets/images/Image-6.png'
+import ImgOnline1 from '../assets/images/Image-5.png'
+import ImgOnline2 from '../assets/images/Image-8.png'
+import ImgOnline3 from '../assets/images/Image-5.png'
+import Mail from '../components/rightside/Mail'
+import Online from '../components/rightside/Online'
+import CardOnline from '../components/cards/CardOnline'
+
+
 // challenge myself to try to implement a more unique and professional design
 
 // sidebar / nav left
@@ -111,10 +124,25 @@ const Dashboard = ({ games }) => {
         </section>
       </div>
       </article>
-      <RightSide />
+        <RightSide>
+        <Library>
+        <CardGameItem img={Img1} title='Minecraft' platforms='xbox, ps5, pc' />
+        <CardGameItem img={Img2} title='Assassins creed' platforms='xbox, ps5, pc' />
+        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
+        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
+        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
+      </Library>
+      <Mail />
+      <Online>
+        <CardOnline img={ImgOnline1} title='YeahBoi2023' playing='Fortnite'/>
+        <CardOnline img={ImgOnline2} title='KidRage06' playing='Rocket League'/>
+        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
+        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
+        <CardOnline img={ImgOnline3} title='OldManAim75' playing='Warzone 2.0'/>
+      </Online>
+      </RightSide>
       <div className="bg_ellipse"></div>
       </DashboardMain>
-      <Hero />
       </>
   )
 }

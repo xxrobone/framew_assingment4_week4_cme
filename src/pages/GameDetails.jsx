@@ -6,25 +6,29 @@ import { SiNintendo } from 'react-icons/si';
 
 
 const Details = styled.div`
-margin: 0 auto;
+margin: 8.725rem auto 4.125rem;
 max-width: 800px;
 display: flex;
 align-items: center;
 flex-flow: wrap;
 
 &>div {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   &>h1 {
     margin-bottom: 2rem;
-  width: 100%;
-  align-self: center;
-  font-size: clamp(2rem, 4vw, 6rem);
+    width: 100%;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
   &>img {
     width: 80%;
     height: 40%;
     top:0;
+    border-radius: 3.125rem;
   }
 
   &>h4 {
@@ -62,29 +66,32 @@ flex-flow: wrap;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background: linear-gradient(to top left, #252525, #2c2c2c, #1f1f1f);
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.185);
+  border-radius: 2rem;
 
   .thumbnail {
     margin: 1rem;
     max-width: 25%;
     height: auto;
+    border-radius: 2rem;
   }
 }
 
 .go_back {
-  margin: 0 auto;
+  margin: 2rem auto 0;
   padding: 1rem 2rem;
-  border: 1px solid #888;
   width: 40%;
   text-align: center;
+  border: 1px solid #888;
+  border-radius: 2rem;
 
   &:hover {
     transition: all 0.4s ease-in-out;
-    background-color: white;
+    background-color: #e2e2e2;
     color: #282828;
   }
 }
-
  `;
 
 const GameDetails = ({games}) => {

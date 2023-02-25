@@ -24,21 +24,13 @@ const CardgameContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    /* max-width: 53.125rem;
-    max-height: 20rem; */
     width: 100%;
     height: 100%;
     border-radius: 3.125rem;
-
-    /* &:hover {
-      border: 2px solid #888;
-    } */
-
     &>div {
 
       &>img {
         border-radius: 3.125rem;
-        /* opacity: 0.5; */
       }
     }
 
@@ -90,8 +82,6 @@ const AddToCardContainer = styled.div`
   min-width: 15rem;
   height: 3.5rem;
   position: relative;
-  /* left: 4rem;
-  bottom: 3.5rem; */
   display: flex;
   align-items: center;
   justify-content: space-between;

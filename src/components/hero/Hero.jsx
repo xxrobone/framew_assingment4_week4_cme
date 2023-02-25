@@ -5,11 +5,9 @@ import COD from '../../assets/images/hero/cod.png'
 import FORTNITE from '../../assets/images/hero/fortnite.png'
 import ZELDA from '../../assets/images/hero/zelda.png'
 import MARIO from '../../assets/images/hero/mario.png'
-import HUNTER from '../../assets/images/hero/hunter.png'
 import { useIsDesktop } from '../../hooks/useMediaQuery'
 
 const HeroWrapper = styled.div`
-    margin-top: 20vh;
     width: 100%;
     height: 80vh;
     position: relative;     
@@ -46,7 +44,7 @@ const Inner = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.8;
+        opacity: 0.6;
         border-radius: 3.125rem;
     }
 
@@ -105,7 +103,7 @@ const Hero = () => {
           <img className='cod' src={COD} alt="" />          
           <img className='fortnite' src={FORTNITE} alt="" />          
           <img className='mario' src={MARIO} alt="" />          
-          <img className='zelda' src={ZELDA} alt="" />          
+          <img className='zelda' src={ZELDA} alt="" />                  
         </Inner>
     </HeroWrapper>
   )

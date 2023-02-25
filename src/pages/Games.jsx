@@ -4,6 +4,9 @@ import Header from '../components/Header/Header'
 import GamesList from '../components/GamesList/GamesList'
 import { RiSearch2Line } from 'react-icons/ri'
 import Hero from '../components/hero/Hero';
+import RightSide from '../components/rightside/RightSide';
+import Library from '../components/rightside/Library';
+import CardGameItem from '../components/cards/CardGameItem';
 
 
 const API_URL = import.meta.env.VITE_APP_API_URL
@@ -11,16 +14,26 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY
 const API_GAMES = `${API_URL}?key=${API_KEY}`
 const API_SEARCH = `${API_URL}?key=${API_KEY}&search=`
 
-const HomeWrapper = styled.div`
+const GamesPage = styled.div`
+    margin-top: 8.75rem;
+    margin-left: 3.125rem;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 
     &>h1 {
-      margin: 0.5rem 0 1rem;
+      margin: 2rem 0 1rem;
       font-size: 2.5rem;
       font-weight: 600;
+    }
+
+    &>div {
+      margin-top: 4.125rem;
+      display: flex;
+      flex-direction: column;
     }
 `
 
@@ -64,7 +77,25 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
 `;
 
 
-function Games ({games}) {
+function Games({ games }) {
+  const [gamesList, setGamesList] = useState([])
+  
+  const handleOnSave = (e) => {
+    console.log(e.target.value)
+}
+
+useEffect(() => {
+    const mygames = JSON.parse(localStorage.getItem('mygames'));
+    if (mygames) {
+     setGamesList([...mygames]);
+    } else {
+        setGamesList([])
+    }
+}, [])
+
+  let game = games[3]
+    
+  console.log(game)
 /* 
   const [games, setGames] = useState([]);
   const[ isLoading, setLoading ] = useState(true);
@@ -110,7 +141,8 @@ function Games ({games}) {
 
 
   return (
-    <HomeWrapper>
+    <GamesPage>
+      <div>
     <Hero />
       {/* <Form onSubmit={handleOnSubmit} id="form1">
             <Input
@@ -128,8 +160,15 @@ function Games ({games}) {
               ><RiSearch2Line /></button>
           </Form>          */}
       <h1>GAMES</h1>
-      <GamesList games={games} />      
-    </HomeWrapper>
+      <GamesList games={games} />    
+
+      </div>
+      <RightSide>
+        <Library>
+          <CardGameItem img={game.background_image} title={game.name} platforms='xbox, ps, pc' />
+        </Library>
+      </RightSide>
+    </GamesPage>
   );
 }
 
