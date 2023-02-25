@@ -71,8 +71,8 @@ const Inner = styled.div`
     &>.mario {
         margin-bottom: -1.5rem;
         position: absolute;
-        top: -10vh;
-        right: 5%;
+        top: -5vh;
+        right: -5%;
         width: 20%;
         height: auto;
         object-fit: cover;

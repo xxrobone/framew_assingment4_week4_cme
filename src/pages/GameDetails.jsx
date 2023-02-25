@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { RiPlaystationLine, RiXboxFill, RiMacLine, RiWindowsFill, RiAndroidLine, RiAppleFill } from 'react-icons/ri'
 import { DiLinux } from 'react-icons/di';
 import { SiNintendo } from 'react-icons/si';
+import RightSide from '../components/rightside/RightSide';
+import Button from '../components/buttons/button/Button';
 
 
 const Details = styled.div`
@@ -94,14 +96,24 @@ flex-flow: wrap;
 }
  `;
 
+const SaveGame = styled.div`
+position: absolute;
+top: calc(8.75rem + 8.75rem);
+right: 0;
+z-index: 100;
+`
+
 const GameDetails = ({games}) => {
   const { gameId } = useParams();
   console.log(gameId)
 
   return (
     <>
-    <Details>     
-       
+      
+      <SaveGame>
+        <Button title='Save game'/>
+      </SaveGame>
+    <Details>           
         {games && games.map((game) => {
           if (game.id == gameId) {
             return (
@@ -144,7 +156,6 @@ const GameDetails = ({games}) => {
         })}
         <Link to='/' className='go_back'> Go back </Link>
     </Details>
-    
     </>
   );
 };

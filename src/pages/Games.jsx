@@ -31,9 +31,12 @@ const GamesPage = styled.div`
     }
 
     &>div {
-      margin-top: 4.125rem;
       display: flex;
       flex-direction: column;
+
+      :last-child {
+        padding: 3.125rem 0;
+      }
     }
 `
 
@@ -160,14 +163,15 @@ useEffect(() => {
               ><RiSearch2Line /></button>
           </Form>          */}
       <h1>GAMES</h1>
-      <GamesList games={games} />    
-
+      <GamesList games={games} />   
       </div>
+      <div>
       <RightSide>
         <Library>
           <CardGameItem img={game.background_image} title={game.name} platforms='xbox, ps, pc' />
         </Library>
       </RightSide>
+      </div>
     </GamesPage>
   );
 }
