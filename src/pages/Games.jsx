@@ -166,8 +166,12 @@ useEffect(() => {
       </div>
       <div>
       <RightSide>
-        <Library>
-          <CardGameItem title='Game name' platforms='xbox, ps, pc' />
+          <Library>
+            {gamesLibrary.map((game) => 
+            (
+              <CardGameItem title={game.name} img={game.background_image} platforms='xbox, ps, pc' />
+            ))}
+         
         </Library>
       </RightSide>
       </div>
