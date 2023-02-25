@@ -12,7 +12,7 @@ A games API
 I chose to work with Styled-components instead of only sass or css
 
 ## Accepted a challenge
-Implementing a design from figma
+Implementing a dashboard design from figma
 
 https://www.figma.com/file/xLjiChv0EwEWMOiGbGornX/Gaming-Dashboard-(Community)?node-id=0%3A1&t=mid3U9AijQvtXoBA-0
 

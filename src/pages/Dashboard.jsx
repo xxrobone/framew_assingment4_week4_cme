@@ -4,6 +4,7 @@ import CardGame from '../components/cards/CardGame'
 import CardItem from '../components/cards/CardItem'
 import CardSlider from '../components/cardslider/CardSlider'
 import CardSmall from '../components/cards/CardSmall'
+import Hero from '../components/hero/Hero'
 
 import GameImg1 from '../assets/images/Image-7.png'
 import GameImg2 from '../assets/images/Image-10.png'
@@ -24,7 +25,7 @@ import RightSide from '../components/rightside/RightSide'
 // card best gaming headset
 // slider recently played
 
-const VgaMain = styled.div`
+const DashboardMain = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
@@ -76,12 +77,23 @@ const VgaMain = styled.div`
 }
 `
 
+const cardsList = () => {
+  return (
+    <>
+        <CardSmall img={GameImg2} />
+          <CardSmall img={GameImg3} />
+          <CardSmall img={GameImg4} />
+          <CardSmall img={GameImg5} />
+          <CardSmall img={GameImg6} />
+    </>
+  )
+}
 
-
-const Vga = ({ games }) => {
+const Dashboard = ({ games }) => {
   
   return (
-    <VgaMain>
+    <>
+    <DashboardMain>
       <article>
       <CardGame />
       <div>
@@ -93,22 +105,18 @@ const Vga = ({ games }) => {
 
                 return (
                   < CardSmall img = { g.background_image } title = { g.name } />
-
                 )
                } ))}
-          {/* <CardSmall img={GameImg2} />
-          <CardSmall img={GameImg3} />
-          <CardSmall img={GameImg4} />
-          <CardSmall img={GameImg5} />
-          <CardSmall img={GameImg6} /> */}
         </CardSlider>
         </section>
       </div>
       </article>
       <RightSide />
       <div className="bg_ellipse"></div>
-      </VgaMain>
+      </DashboardMain>
+      <Hero />
+      </>
   )
 }
 
-export default Vga
+export default Dashboard

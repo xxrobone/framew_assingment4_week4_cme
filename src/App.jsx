@@ -4,7 +4,7 @@ import './App.css';
 import styled from 'styled-components';
 import Games from './pages/Games';
 import GameDetails from './pages/GameDetails';
-import Vga from './pages/Vga';
+import Dashboard from './pages/Dashboard';
 /* import { RiSearch2Line } from 'react-icons/ri'; */
 import BellIcon from './assets/icons/akar-icons_bell.svg'
 import PaperPlaneIcon from './assets/icons/cil_paper-plane.svg'
@@ -148,7 +148,7 @@ console.log(recentGames)
         <Routes>
           <Route path='/games' element={<Games games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />} />
           <Route path="/games/:gameId" element={<GameDetails games={games} />} />
-          <Route path="/" element={<Vga games={recentGames} />} />
+          <Route path="/" element={<Dashboard games={recentGames} />} />
           </Routes>
           </ThemeProvider>
           </div>

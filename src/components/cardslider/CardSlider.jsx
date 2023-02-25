@@ -10,10 +10,10 @@ const Slider = styled.div`
     overflow: hidden;
     cursor: grab;
 
- @media screen and (min-width: 768px) {
-  width: 27.5rem;
-  width: 27.5rem;
-    }
+    @media screen and (min-width: 768px) {
+      width: 27.5rem;
+      width: 27.5rem;
+        }
 
  &>.inner {
     position: relative;
@@ -24,8 +24,8 @@ const Slider = styled.div`
     overflow-y: scroll;
 
     ::-webkit-scrollbar {
-  display: none;
-}
+        display: none;
+      }
 
     &>img {
       object-fit: cover;
