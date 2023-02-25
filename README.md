@@ -2,7 +2,7 @@
 
 - Calling an API and showing the content. 
 - Search function
-- Make it responsive
+- Make it responsive (not done yet)
 
 ## Choice of API
 I chose the same as in Javascript, so I will go with the RAWG.io
