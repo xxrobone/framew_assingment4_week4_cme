@@ -1,10 +1,10 @@
+import {useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { RiPlaystationLine, RiXboxFill, RiMacLine, RiWindowsFill, RiAndroidLine, RiAppleFill } from 'react-icons/ri'
 import { DiLinux } from 'react-icons/di';
 import { SiNintendo } from 'react-icons/si';
 import RightSide from '../components/rightside/RightSide';
-import Button from '../components/buttons/button/Button';
 
 
 const Details = styled.div`
@@ -102,16 +102,67 @@ top: calc(8.75rem + 8.75rem);
 right: 0;
 z-index: 100;
 `
+const SaveBtn = styled.button`
+position: relative;
+    width: 120px;
+    height: 42px;    
+    border-radius: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+    transition: all 0.4s linear;
 
-const GameDetails = ({games}) => {
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      border-radius: 73px;
+      background-image:radial-gradient(circle, #3DBDA7, #3DBDA7);
+      pointer-events: fill;
+      
+    }
+
+    &:hover:before {
+      cursor: pointer;
+      background-image: radial-gradient(circle, #3DBDA7, #067D71);
+    }
+
+`
+
+const GameDetails = ({ games }) => {
   const { gameId } = useParams();
   console.log(gameId)
+
+  const saveGame = (id) => {
+    let mygames = JSON.parse(localStorage.getItem('mygames') || "[]")
+    let newGame;
+    games.map((g) => {
+      if (g.id == id) {
+        newGame = {
+          ...g
+        }
+      } else {
+        return
+      }
+    })
+
+    mygames.push(newGame)
+    
+    window.localStorage.setItem('mygames', JSON.stringify(mygames))
+  }
+
+  function handleClick(e) {
+    saveGame(gameId)
+  }
 
   return (
     <>
       
       <SaveGame>
-        <Button title='Save game'/>
+        <SaveBtn onClick={(e) => handleClick(e)}>Save game</SaveBtn>
       </SaveGame>
     <Details>           
         {games && games.map((game) => {

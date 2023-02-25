@@ -81,24 +81,23 @@ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
 
 
 function Games({ games }) {
-  const [gamesList, setGamesList] = useState([])
-  
-  const handleOnSave = (e) => {
-    console.log(e.target.value)
-}
+  const [gamesLibrary, setGamesLibrary] = useState([])
+
+  console.log('these are my games from library \n' + gamesLibrary.map((game) => console.log('\n ' + game.name + game.background_image)))
 
 useEffect(() => {
     const mygames = JSON.parse(localStorage.getItem('mygames'));
     if (mygames) {
-     setGamesList([...mygames]);
+      setGamesLibrary(mygames);
     } else {
-        setGamesList([])
+        setGamesLibrary([])
     }
 }, [])
 
   let game = games[3]
     
   console.log(game)
+
 /* 
   const [games, setGames] = useState([]);
   const[ isLoading, setLoading ] = useState(true);
@@ -163,12 +162,12 @@ useEffect(() => {
               ><RiSearch2Line /></button>
           </Form>          */}
       <h1>GAMES</h1>
-      <GamesList games={games} />   
+        <GamesList games={games} />   
       </div>
       <div>
       <RightSide>
         <Library>
-          <CardGameItem img={game.background_image} title={game.name} platforms='xbox, ps, pc' />
+          <CardGameItem title='Game name' platforms='xbox, ps, pc' />
         </Library>
       </RightSide>
       </div>
