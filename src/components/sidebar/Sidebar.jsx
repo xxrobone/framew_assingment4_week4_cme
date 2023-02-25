@@ -25,15 +25,11 @@ const SidebarWrapper = styled.div`
     @media screen and (min-width: 769px) {
         width: 7.625rem;
   }
-
-  &>a {
-    
+  &>a {    
       &>img {
           margin: 1rem auto;
       }
-
-  }
-  
+  }  
     &>aside {
         margin-top: 30%;
         width: 100%;
@@ -58,8 +54,8 @@ const IconContainer = styled.div`
 
         @media screen and (min-width: 769px) {
             width: 1.5rem;
-        height: 1.5rem;
-  }
+            height: 1.5rem;
+        }
     }
 `
 const IconWrapper = ({iconImg}) => {

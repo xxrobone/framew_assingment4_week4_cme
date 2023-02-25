@@ -21,7 +21,7 @@ const Button = styled.button`
   cursor: pointer;
   padding: 0.3rem;
   position: fixed;
-  top: 2vh;
+  top: 3.625rem;
   left: 1vw;
   z-index: 50;
   outline: none;

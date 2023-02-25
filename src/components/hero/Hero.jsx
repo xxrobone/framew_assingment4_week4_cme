@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {motion} from 'framer-motion'
 import  BG from '../../assets/images/hero/castle.jpg'
 import COD from '../../assets/images/hero/cod.png'
 import FORTNITE from '../../assets/images/hero/fortnite.png'
@@ -96,14 +97,38 @@ const Hero = () => {
   return (      
       <HeroWrapper>
           <div className='headline'>
-          <h1>VGA</h1>          
+              <motion.h1
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{duration: 2, delay: 0.6, ease: 'easeOut'}}
+              >VGA</motion.h1>          
           </div>
         <Inner>
-          <img className='bg' src={BG} alt="" />          
-          <img className='cod' src={COD} alt="" />          
-          <img className='fortnite' src={FORTNITE} alt="" />          
-          <img className='mario' src={MARIO} alt="" />          
-          <img className='zelda' src={ZELDA} alt="" />                  
+              <motion.img className='bg' src={BG} alt=""
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{duration: 0.6, delay: 0.6, ease: 'easeOut'}}
+              />          
+              <motion.img className='cod' src={COD} alt=""
+               initial={{ opacity: 0, y: 300 }}
+               animate={{ opacity: 0.4, y: 0 }}
+               transition={{duration: 0.6, delay: 0.6, ease: 'easeOut'}}
+              />          
+              <motion.img className='fortnite' src={FORTNITE} alt=""
+              initial={{ opacity: 0, x: -200 }}
+              animate={{ opacity: 1, x:0 }}
+              transition={{duration: 1, delay: 0.8, ease: 'easeOut'}}
+              />          
+              <motion.img className='mario' src={MARIO} alt=""
+               initial={{ opacity: 0, y: 300, x: 50 }}
+               animate={{ opacity: 1, y: 0, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0, ease: 'easeOut' }}
+              />          
+              <motion.img className='zelda' src={ZELDA} alt=""
+               initial={{ opacity: 0, x: 200 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{duration: 0.6, delay: 1.2, ease: 'easeOut'}}
+              />                  
         </Inner>
     </HeroWrapper>
   )
