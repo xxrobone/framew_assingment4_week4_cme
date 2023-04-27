@@ -134,11 +134,11 @@ console.log(recentGames)
     <BrowserRouter>
       <div>
         <ThemeProvider theme={themeMode}>     
-        <ThemeToggle theme={theme} toggleTheme={themeToggler} />  
         <GlobalStyles />
         <Header>
           <Search games={games} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />
-          <div>
+            <div>
+              <ThemeToggle theme={theme} toggleTheme={themeToggler} />
             <IconBtn iconImg={BellIcon} dark />
             <IconBtn iconImg={PaperPlaneIcon} />
             <ProfileImg img={HeaderProfileImg} />
