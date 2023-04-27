@@ -126,11 +126,11 @@ useEffect(() => {
         <section>
           <h4>Recently played games</h4>
             <CardSlider>
-              {games && games.map((g => { 
+              {games.map((g => { 
                   return (
                   < CardSmall img = { g.background_image } title = { g.name } />
                 )
-               } ))} : null
+               } ))}
         </CardSlider>
         </section>
       </div>
