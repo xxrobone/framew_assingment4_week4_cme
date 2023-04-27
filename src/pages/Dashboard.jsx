@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import CardGame from '../components/cards/CardGame'
 import CardItem from '../components/cards/CardItem'
@@ -103,6 +103,18 @@ const cardsList = () => {
 }
 
 const Dashboard = ({ games }) => {
+  const [gamesLibrary, setGamesLibrary] = useState([])
+
+  console.log('these are my games from library \n' + gamesLibrary.map((game) => console.log('\n ' + game.name + game.background_image)))
+
+useEffect(() => {
+    const mygames = JSON.parse(localStorage.getItem('mygames'));
+    if (mygames) {
+      setGamesLibrary(mygames);
+    } else {
+        setGamesLibrary([])
+    }
+}, [])
   
   return (
     <>
@@ -114,23 +126,26 @@ const Dashboard = ({ games }) => {
         <section>
           <h4>Recently played games</h4>
             <CardSlider>
-              {games.map((g => { 
-
-                return (
+              {games && games.map((g => { 
+                  return (
                   < CardSmall img = { g.background_image } title = { g.name } />
                 )
-               } ))}
+               } ))} : null
         </CardSlider>
         </section>
       </div>
       </article>
         <RightSide>
         <Library>
-        <CardGameItem img={Img1} title='Minecraft' platforms='xbox, ps5, pc' />
+       {/*  <CardGameItem img={Img1} title='Minecraft' platforms='xbox, ps5, pc' />
         <CardGameItem img={Img2} title='Assassins creed' platforms='xbox, ps5, pc' />
         <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
         <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
-        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' />
+        <CardGameItem img={Img3} title='Fortnite' platforms='xbox, ps5, pc' /> */}
+             {gamesLibrary.map((game) => 
+            (
+              <CardGameItem title={game.name} img={game.background_image} platforms='xbox, ps, pc' />
+            ))}
       </Library>
       <Mail />
       <Online>
